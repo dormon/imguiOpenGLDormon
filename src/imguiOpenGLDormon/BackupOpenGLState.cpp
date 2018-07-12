@@ -19,10 +19,10 @@ BackupOpenGLState::BackupOpenGLState(OpenGLTable const&gl):gl(gl){
   gl.glGetIntegerv(GL_BLEND_DST_ALPHA, (GLint*)&last_blend_dst_alpha);
   gl.glGetIntegerv(GL_BLEND_EQUATION_RGB, (GLint*)&last_blend_equation_rgb);
   gl.glGetIntegerv(GL_BLEND_EQUATION_ALPHA, (GLint*)&last_blend_equation_alpha);
-  gl.glIsEnabled(GL_BLEND);
-  gl.glIsEnabled(GL_CULL_FACE);
-  gl.glIsEnabled(GL_DEPTH_TEST);
-  gl.glIsEnabled(GL_SCISSOR_TEST);
+  last_enable_blend = gl.glIsEnabled(GL_BLEND);
+  last_enable_cull_face = gl.glIsEnabled(GL_CULL_FACE);
+  last_enable_depth_test = gl.glIsEnabled(GL_DEPTH_TEST);
+  last_enable_scissor_test = gl.glIsEnabled(GL_SCISSOR_TEST);
 }
 
 BackupOpenGLState::~BackupOpenGLState(){
