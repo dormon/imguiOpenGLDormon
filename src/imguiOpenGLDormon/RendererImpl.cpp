@@ -156,8 +156,9 @@ bool didShaderCompile(OpenGLTable const&gl,GLuint id){
 }
 
 void checkCompileStatus(OpenGLTable const&gl,GLuint id){
+  std::cerr << "##############x" << std::endl;
   if(didShaderCompile(gl,id))return;
-  throw std::runtime_error(getShaderInfoLog(gl,id));
+  throw std::runtime_error(std::string("imgui shader failed to compile")+getShaderInfoLog(gl,id));
 }
 
 GLuint createShader(OpenGLTable const&gl,GLenum type,std::string const&src){
