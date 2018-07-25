@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <cstdint>
 #include <iostream>
+#include <cassert>
 
 namespace imguiOpenGLDormon{
 
