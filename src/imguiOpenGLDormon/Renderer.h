@@ -11,11 +11,11 @@ namespace imguiOpenGLDormon{
 }
 
 struct ImDrawData;
-class IMGUIOPENGLDORMON_EXPORT imguiOpenGLDormon::Renderer{
+class imguiOpenGLDormon::Renderer{
   public:
-    Renderer(size_t version = 150);
-    ~Renderer();
-    void render(ImDrawData*data);
+    IMGUIOPENGLDORMON_EXPORT Renderer(size_t version = 150);
+	IMGUIOPENGLDORMON_EXPORT ~Renderer();
+	IMGUIOPENGLDORMON_EXPORT void render(ImDrawData*data);
   private:
     friend class ImguiOpenGLImpl;
     std::unique_ptr<RendererImpl>impl;
