@@ -10,7 +10,7 @@ namespace imguiOpenGLDormon{
 #if defined(_MSC_VER)
 #define WIN32_LEAN_AND_MEAN
 #include<Windows.h>
-    class GEGL_EXPORT OpenGLFunctionLoader{
+    class OpenGLFunctionLoader{
     protected:
         bool _triedToLoadOpenGL = false;
         bool _triedToLoadGetProcAddress = false;
@@ -94,7 +94,7 @@ namespace imguiOpenGLDormon{
         return lib;
     }
     
-    class GEGL_EXPORT OpenGLFunctionLoader {
+    class OpenGLFunctionLoader {
     protected:
         bool _triedToLoadOpenGL = false;
         void* openglLib = nullptr;
@@ -127,7 +127,7 @@ namespace imguiOpenGLDormon{
         }
     };
 #else
-    class GEGL_EXPORT OpenGLFunctionLoader{
+    class OpenGLFunctionLoader{
     protected:
         bool _triedToLoadOpenGL = false;
         bool _triedToLoadGetProcAddress = false;
